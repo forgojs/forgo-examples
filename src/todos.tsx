@@ -83,6 +83,14 @@ function AddTodo(props: AddTodoProps) {
   };
 }
 
-window.addEventListener("load", () => {
+function ready(fn: any) {
+  if (document.readyState != "loading") {
+    fn();
+  } else {
+    document.addEventListener("DOMContentLoaded", fn);
+  }
+}
+
+ready(() => {
   mount(<TodoList />, document.getElementById("root"));
 });
