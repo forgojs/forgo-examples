@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "forgo": "^0.0.10",
-    "forgo-router": "^0.0.3"
+    "forgo-router": "^0.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
