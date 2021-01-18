@@ -1,5 +1,5 @@
 import { mount } from "forgo";
-import { matchUrl, matchExactUrl, Link } from "forgo-router";
+import { Router, matchUrl, matchExactUrl, Link } from "forgo-router";
 
 type Customer = {
   id: number;
@@ -17,12 +17,12 @@ function App() {
   return {
     render() {
       return (
-        <div>
+        <Router>
           <Link href="/">Home Page</Link>
           {matchExactUrl("/", () => <Home />) ||
             matchUrl("/customers", (match) => <Customers />) ||
             matchUrl("/about", () => <AboutPage />)}
-        </div>
+        </Router>
       );
     },
   };
