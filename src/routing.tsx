@@ -20,7 +20,7 @@ function App() {
         <div>
           <Link href="/">Home Page</Link>
           {matchExactUrl("/", () => <Home />) ||
-            matchUrl("/customers", () => <Customers />) ||
+            matchUrl("/customers", (match) => <Customers />) ||
             matchUrl("/about", () => <AboutPage />)}
         </div>
       );
