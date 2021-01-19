@@ -1,14 +1,16 @@
 # examples
+
 Examples using Forgo
 
 # How to Run
-You need `parcel-js` installed as a dependency.
 
-This can be done by:
+Install dependencies first.
 
-    npm install -g parcel-bundler
+```sh
+npm install
+```
 
-To run the demos you can run either one of these commands:
+You should be able to run any of these demos after that.
 
 ```
 npm run start
