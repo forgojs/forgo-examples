@@ -2,8 +2,8 @@
   "name": "forgo-examples",
   "private": true,
   "dependencies": {
-    "forgo": "^0.0.19",
-    "forgo-router": "^0.0.7"
+    "forgo": "^0.0.21",
+    "forgo-router": "^0.0.11"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -15,5 +15,6 @@
     "start": "rm -rf dist/ && cp -r public/ dist/ && npx parcel public/index.html",
     "start-todos": "rm -rf dist/ && cp -r public/ dist/ && npx parcel public/todos.html",
     "start-routing": "rm -rf dist/ && cp -r public/ dist/ && npx parcel public/routing.html"
-  }
+  },
+  "license": "MIT"
 }
