@@ -1,0 +1,24 @@
+{
+  "name": "forgo-examples",
+  "private": true,
+  "dependencies": {
+    "forgo": "^0.0.23",
+    "forgo-router": "^0.0.14",
+    "forgo-state": "^0.0.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-loader": "^8.2.2",
+    "html-webpack-plugin": "^4.5.1",
+    "ts-loader": "^8.0.14",
+    "typescript": "^4.1.3",
+    "webpack-cli": "^4.4.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "scripts": {
+    "start": "npx webpack serve",
+    "start-todos": "npx webpack serve"
+  },
+  "license": "MIT"
+}

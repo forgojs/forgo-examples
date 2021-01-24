@@ -1,8 +1,24 @@
 # examples
 
-Examples using Forgo
+Examples using Forgo.
+
+Three examples are available:
+
+- Timer
+- Routing
+- Todos
 
 # How to Run
+
+Go to the example directory you want:
+
+```sh
+cd timer
+# OR
+cd todos
+# OR
+cd routing
+```
 
 Install dependencies first.
 
@@ -10,10 +26,8 @@ Install dependencies first.
 npm install
 ```
 
-You should be able to run any of these demos after that.
+Run the demo.
 
 ```
-npm run start
-npm run start-todos
-npm run start-routing
+npm start
 ```
