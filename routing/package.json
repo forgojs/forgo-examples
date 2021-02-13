@@ -2,7 +2,7 @@
   "name": "forgo-examples",
   "private": true,
   "dependencies": {
-    "forgo": "^0.0.63",
+    "forgo": "^0.0.64",
     "forgo-router": "^0.0.28"
   },
   "devDependencies": {
