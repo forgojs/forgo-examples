@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "forgo": "^0.0.46"
+    "forgo": "~1.0.0"
   }
 }
