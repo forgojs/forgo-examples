@@ -5,7 +5,6 @@
     "target": "ES2015",
     "module": "CommonJS",
     "moduleResolution": "Node",
-    "declaration": true,
     "lib": ["es2020", "DOM"],
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
