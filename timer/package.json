@@ -2,7 +2,7 @@
   "name": "forgo-examples",
   "private": true,
   "dependencies": {
-    "forgo": "^3.0.0"
+    "forgo": "^3.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
