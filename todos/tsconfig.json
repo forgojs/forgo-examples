@@ -9,8 +9,9 @@
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "strict": true,
-    "jsx": "react-jsx",
-    "jsxImportSource": "forgo"
+    "jsx": "react",
+    "jsxFactory": "forgo.createElement",
+    "jsxFragmentFactory": "forgo.Fragment"
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"]
 }

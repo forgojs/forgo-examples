@@ -1,5 +1,7 @@
-import { mount } from "forgo";
+import * as forgo from "forgo";
+import { mount, Component } from "forgo";
 import { Router, matchUrl, matchExactUrl, Link } from "forgo-router";
+import type { ForgoNewComponentCtor } from "forgo";
 
 type Customer = {
   id: number;
@@ -13,8 +15,8 @@ const customers = [
   { id: 3, name: "Deepsta", age: 42 },
 ];
 
-function App() {
-  return {
+const App: ForgoNewComponentCtor = () => {
+  return new Component({
     render() {
       return (
         <Router>
@@ -25,11 +27,11 @@ function App() {
         </Router>
       );
     },
-  };
-}
+  });
+};
 
-function Home() {
-  return {
+const Home: ForgoNewComponentCtor = () => {
+  return new Component({
     render() {
       return (
         <div>
@@ -46,11 +48,11 @@ function Home() {
         </div>
       );
     },
-  };
-}
+  });
+};
 
-function Customers() {
-  return {
+const Customers: ForgoNewComponentCtor = () => {
+  return new Component({
     render() {
       return (
         <div>
@@ -66,15 +68,15 @@ function Customers() {
         </div>
       );
     },
-  };
-}
-
-type CustomersProps = {
-  customers: Customer[];
+  });
 };
 
-export function CustomerList(props: CustomersProps) {
-  return {
+interface CustomersProps {
+  customers: Customer[];
+}
+
+export const CustomerList: ForgoNewComponentCtor<CustomersProps> = () => {
+  return new Component({
     render(props: CustomersProps) {
       return (
         <div>
@@ -91,15 +93,17 @@ export function CustomerList(props: CustomersProps) {
         </div>
       );
     },
-  };
-}
-
-type CustomerDetailsProps = {
-  id: string;
+  });
 };
 
-export function CustomerDetails(props: CustomerDetailsProps) {
-  return {
+interface CustomerDetailsProps {
+  id: string;
+}
+
+export const CustomerDetails: ForgoNewComponentCtor<CustomerDetailsProps> = (
+  props
+) => {
+  return new Component({
     render(props: CustomerDetailsProps) {
       const customer = customers.find((c) => c.id.toString() === props.id);
       return (
@@ -116,11 +120,11 @@ export function CustomerDetails(props: CustomerDetailsProps) {
         </div>
       );
     },
-  };
-}
+  });
+};
 
-export function AboutPage() {
-  return {
+export const AboutPage: ForgoNewComponentCtor = () => {
+  return new Component({
     render() {
       return (
         <div>
@@ -129,8 +133,8 @@ export function AboutPage() {
         </div>
       );
     },
-  };
-}
+  });
+};
 
 function ready(fn: any) {
   if (document.readyState != "loading") {

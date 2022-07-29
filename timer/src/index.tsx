@@ -1,23 +1,24 @@
-import { mount, rerender, ForgoRenderArgs } from "forgo";
+import * as forgo from "forgo";
+import { mount, rerender, Component } from "forgo";
+import type { ForgoNewComponentCtor } from "forgo";
 
 /*
   A timer component
 */
-export function Timer() {
+export const Timer: ForgoNewComponentCtor = () => {
   let seconds = 0;
 
-  return {
-    render(props: any, args: ForgoRenderArgs) {
+  return new Component({
+    render(_props, component) {
       setTimeout(() => {
         seconds++;
-        rerender(args.element);
+        component.update();
       }, 1000);
 
       return <div>{seconds} secs have elapsed...</div>;
     },
-  };
-}
-
+  });
+};
 
 window.addEventListener("load", () => {
   mount(<Timer />, document.getElementById("root"));

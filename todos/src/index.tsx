@@ -1,18 +1,18 @@
-import { mount, rerender, ForgoRenderArgs } from "forgo";
+import * as forgo from "forgo";
+import { mount, rerender, Component } from "forgo";
+import type { ForgoNewComponentCtor } from "forgo";
 
 /*
   The main Todo List component
 */
-type TodoListProps = {};
-
-export function TodoList(props: TodoListProps) {
+export const TodoList: ForgoNewComponentCtor = () => {
   let todos: string[] = [];
 
-  return {
-    render(props: TodoListProps, args: ForgoRenderArgs) {
+  return new Component({
+    render(_props, component) {
       function onTodoAdd(text: string) {
         todos.push(text);
-        rerender(args.element);
+        component.update();
       }
 
       return (
@@ -27,51 +27,53 @@ export function TodoList(props: TodoListProps) {
         </div>
       );
     },
-  };
-}
+  });
+};
 
 /*
   Display a Todo list item
 */
-type TodoListItemProps = {
+interface TodoListItemProps {
   text: string;
-};
+}
 
-export function TodoListItem(props: TodoListItemProps) {
-  return {
-    render() {
+export const TodoListItem: ForgoNewComponentCtor<TodoListItemProps> = (
+  _props
+) => {
+  return new Component({
+    render(props) {
       return <li>{props.text}</li>;
     },
-  };
-}
+  });
+};
 
 /*
   Add a Todo Box
 */
-type AddTodoProps = {
+interface AddTodoProps {
   onAdd: (text: string) => void;
-};
+}
 
-function AddTodo(props: AddTodoProps) {
+const AddTodo: ForgoNewComponentCtor<AddTodoProps> = (props) => {
   const input: { value?: HTMLInputElement } = {};
 
-  function saveTodo() {
+  const saveTodo = () => {
     const inputEl = input.value;
     if (inputEl) {
       props.onAdd(inputEl.value);
       inputEl.value = "";
       inputEl.focus();
     }
-  }
+  };
 
   // Add the todo when enter is pressed
-  function onKeyPress(e: KeyboardEvent) {
+  const onKeyPress = (e: KeyboardEvent) => {
     if (e.key === "Enter") {
       saveTodo();
     }
-  }
+  };
 
-  return {
+  return new Component({
     render() {
       return (
         <div>
@@ -80,8 +82,8 @@ function AddTodo(props: AddTodoProps) {
         </div>
       );
     },
-  };
-}
+  });
+};
 
 function ready(fn: any) {
   if (document.readyState != "loading") {
