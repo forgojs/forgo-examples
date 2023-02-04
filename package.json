@@ -1,5 +1,4 @@
 {
-  "dependencies": {
-    "forgo": "~1.0.0"
-  }
+  "name": "forgo-examples",
+  "private": true
 }
